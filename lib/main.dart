@@ -222,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 left: mediaSize.width * .09,
                 right: mediaSize.width * .09,
                 top: mediaSize.height * .07,
-                bottom: mediaSize.height * .05),
+                bottom: 0),
             sliver: SliverToBoxAdapter(
               child: CustomText(
                 'Event Ticket',
@@ -236,7 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.only(
                 left: mediaSize.width * .09,
                 right: mediaSize.width * .09,
-                top: mediaSize.height * .07,
+                top: mediaSize.height * .03,
                 bottom: mediaSize.height * .05),
             sliver: SliverGrid(
               delegate:
@@ -258,7 +258,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 left: mediaSize.width * .28,
                 right: mediaSize.width * .28,
                 top: mediaSize.height * .02,
-                bottom: mediaSize.height * .08),
+                bottom: mediaSize.height * .18),
             sliver: SliverToBoxAdapter(
               child: AppButtonWidget(
                 buttonTitle: 'See 6 More',
