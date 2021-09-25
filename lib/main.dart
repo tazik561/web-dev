@@ -66,14 +66,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                            height: mediaSize.height * .028,
-                            // width: mediaSize.width * .02,
-                            child: Image.asset(
-                              'assets/images/Logo@4x.png',
-                            ),
+                        Container(
+                          height: mediaSize.height * .028,
+                          padding: EdgeInsets.only(
+                              left: mediaSize.width * .09,
+                              right: mediaSize.width * .09),
+                          child: Image.asset(
+                            'assets/images/Logo@4x.png',
                           ),
                         ),
                         Expanded(
@@ -101,25 +100,27 @@ class _MyHomePageState extends State<MyHomePage> {
                               AppButtonWidget(
                                 buttonTitle: 'Download the App',
                               ),
-                              Container(
-                                padding: const EdgeInsets.all(8),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/MyAccount@4x.png',
-                                      height: mediaSize.height * .02,
-                                    ),
-                                    SizedBox(
-                                      width: 8,
-                                    ),
-                                    CustomText(
-                                      'My Account',
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ],
-                                ),
-                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: mediaSize.width * .03,
+                              right: mediaSize.width * .09),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
+                                'assets/images/MyAccount@4x.png',
+                                height: mediaSize.height * .02,
+                              ),
+                              SizedBox(
+                                width: 8,
+                              ),
+                              CustomText(
+                                'My Account',
+                                fontWeight: FontWeight.bold,
+                              ),
                             ],
                           ),
                         )
@@ -246,7 +247,7 @@ class _MyHomePageState extends State<MyHomePage> {
               }, childCount: 6),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
-                childAspectRatio: 3 / 4,
+                childAspectRatio: 5 / 7,
                 crossAxisSpacing: 30,
                 mainAxisSpacing: 30,
               ),
@@ -270,7 +271,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: mediaSize.height * .8,
+              height: mediaSize.height * .99,
               width: double.maxFinite,
               child: Stack(
                 fit: StackFit.expand,
@@ -294,8 +295,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     alignment: Alignment.centerRight,
                     child: Container(
                       // color: Colors.red,
-                      width: mediaSize.width * .6,
-                      // padding: EdgeInsets.only(left: 100),
+                      width: mediaSize.width * .5,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -303,7 +303,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             padding: EdgeInsets.only(
                                 right: mediaSize.width * .04,
                                 bottom: 2,
-                                top: mediaSize.height * .08),
+                                top: mediaSize.height * .07),
                             child: CustomText(
                               'Own Your Night',
                               fontWeight: FontWeight.bold,
@@ -333,7 +333,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           Container(
-                            height: mediaSize.height * .34,
+                            height: mediaSize.height * .36,
                             width: double.maxFinite,
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -418,10 +418,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SliverPadding(
             padding: EdgeInsets.only(
-                // left: mediaSize.width * .28,
-                // right: mediaSize.width * .28,
-                top: mediaSize.height * .1,
-                bottom: mediaSize.height * .08),
+                top: mediaSize.height * .1, bottom: mediaSize.height * .08),
             sliver: SliverToBoxAdapter(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,

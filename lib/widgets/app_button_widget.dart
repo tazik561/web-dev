@@ -27,7 +27,7 @@ class AppButtonWidget extends StatelessWidget {
         onPressed: () {},
         child: Text(buttonTitle),
         style: ElevatedButton.styleFrom(
-            primary: buttonColor ?? Colors.blue,
+            primary: buttonColor ?? Color(0xff3980F7),
             padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
             textStyle: TextStyle(
                 fontSize: fontSize ?? 18,

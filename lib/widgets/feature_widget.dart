@@ -16,9 +16,8 @@ class FeatureWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size mediaSize = MediaQuery.of(context).size;
     return Container(
-      // color: Colors.green,
       width: mediaSize.width * .2,
-      height: mediaSize.height * .09,
+      height: mediaSize.height * .12,
       padding: const EdgeInsets.only(right: 10, top: 10, bottom: 10),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -41,11 +40,15 @@ class FeatureWidget extends StatelessWidget {
                   fontSize: 24,
                   textColor: Colors.white,
                 ),
+                SizedBox(
+                  height: 5,
+                ),
                 Expanded(
                   child: Row(
                     children: [
                       Container(
-                        width: 200,
+                        width: 250,
+                        height: 200,
                         child: CustomText(
                           subTitle,
                           fontWeight: FontWeight.w400,
