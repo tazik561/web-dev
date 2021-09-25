@@ -1,3 +1,4 @@
+import 'package:web_dev_sample/data/footer_item_model.dart';
 import 'package:web_dev_sample/data/grid_model.dart';
 
 List<GridModel> getGridModels() {
@@ -40,3 +41,15 @@ List<GridModel> getGridModels() {
     ),
   ];
 }
+
+FooterItemModel makeCompanyItem() => FooterItemModel(
+    title: "Company",
+    subtitles: ["Contact Us", "Brand Ambassadors", "About Us"]);
+
+FooterItemModel makeCustomersItem() => FooterItemModel(
+    title: "Customers",
+    subtitles: ["Buy Event Tickets", "Buy Gift Cards", "Refunds", "Merch"]);
+
+FooterItemModel makeVenueOwnersItem() => FooterItemModel(
+    title: "Venue Owners",
+    subtitles: ["Learn More", "Platform", "Schedule Demo", "Dashboard Login"]);

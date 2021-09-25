@@ -3,8 +3,11 @@ import 'package:web_dev_sample/utils/faks_data.dart';
 import 'package:web_dev_sample/widgets/app_button_widget.dart';
 import 'package:web_dev_sample/widgets/custom_text.dart';
 import 'package:web_dev_sample/widgets/feature_widget.dart';
+import 'package:web_dev_sample/widgets/footer_item_widget.dart';
 import 'package:web_dev_sample/widgets/icon_generator.dart';
 import 'package:web_dev_sample/widgets/main_grid_widget.dart';
+
+import 'widgets/social_groups_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -281,19 +284,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(left: 40),
-                      child: Container(
-                        width: mediaSize.height * .47,
-                        child: Image.asset(
-                          'assets/images/Phone@4x.png',
-                          fit: BoxFit.cover,
-                        ),
+                      child: Image.asset(
+                        'assets/images/Phone@4x.png',
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Container(
-                      color: Colors.red,
+                      // color: Colors.red,
                       width: mediaSize.width * .6,
                       // padding: EdgeInsets.only(left: 100),
                       child: Column(
@@ -303,7 +303,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             padding: EdgeInsets.only(
                                 right: mediaSize.width * .04,
                                 bottom: 2,
-                                top: mediaSize.height * .06),
+                                top: mediaSize.height * .08),
                             child: CustomText(
                               'Own Your Night',
                               fontWeight: FontWeight.bold,
@@ -332,53 +332,62 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: GridView.count(
-                              shrinkWrap: false,
-                              physics: NeverScrollableScrollPhysics(),
-                              mainAxisSpacing: 5,
-                              crossAxisSpacing: 2,
-                              childAspectRatio: 5 / 1.8,
-                              crossAxisCount: 2,
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 0, horizontal: 0),
+                          Container(
+                            height: mediaSize.height * .34,
+                            width: double.maxFinite,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
                               children: [
-                                FeatureWidget(
-                                  iconString: 'assets/images/LineSkip@4x.png',
-                                  subTitle:
-                                      'LineSkip passes let you skip long lines at your favorite bars, venues, and events.',
-                                  tile: 'LineSkip',
+                                Row(
+                                  children: [
+                                    FeatureWidget(
+                                      iconString:
+                                          'assets/images/LineSkip@4x.png',
+                                      subTitle:
+                                          'LineSkip passes let you skip long lines at your favorite bars, venues, and events.',
+                                      tile: 'LineSkip',
+                                    ),
+                                    FeatureWidget(
+                                      iconString: 'assets/images/Cover@4x.png',
+                                      subTitle:
+                                          'Ditch the ATM! Pay with Venmo, PayPal, or credit card using the LineLeap App.',
+                                      tile: 'Cover',
+                                    ),
+                                  ],
                                 ),
-                                FeatureWidget(
-                                  iconString: 'assets/images/Cover@4x.png',
-                                  subTitle:
-                                      'Ditch the ATM! Pay with Venmo, PayPal, or credit card using the LineLeap App.',
-                                  tile: 'Cover',
+                                Row(
+                                  children: [
+                                    FeatureWidget(
+                                      iconString: 'assets/images/Drinks@4x.png',
+                                      subTitle:
+                                          'Order your drinks right from your phone. No more splitting tabs or soggy receipts!',
+                                      tile: 'Drinks',
+                                    ),
+                                    FeatureWidget(
+                                      iconString: 'assets/images/Events@4x.png',
+                                      subTitle:
+                                          'Get tickerts and VIP access to dope concerts you won’t find anywhere else.',
+                                      tile: 'Event Tickets',
+                                    ),
+                                  ],
                                 ),
-                                FeatureWidget(
-                                  iconString: 'assets/images/Drinks@4x.png',
-                                  subTitle:
-                                      'Order your drinks right from your phone. No more splitting tabs or soggy receipts!',
-                                  tile: 'Drinks',
-                                ),
-                                FeatureWidget(
-                                  iconString: 'assets/images/Events@4x.png',
-                                  subTitle:
-                                      'Get tickerts and VIP access to dope concerts you won’t find anywhere else.',
-                                  tile: 'Event Tickets',
-                                ),
-                                FeatureWidget(
-                                  iconString: 'assets/images/Frame35@4x.png',
-                                  subTitle:
-                                      'Use LineLeap for exclusive deals on your favorite drinks!',
-                                  tile: 'Exclusive Deals',
-                                ),
-                                FeatureWidget(
-                                  iconString:
-                                      'assets/images/Reservations@4x.png',
-                                  subTitle:
-                                      'Save your spot in line or grab the perfect table in seconds.',
-                                  tile: 'Reservations',
+                                Row(
+                                  children: [
+                                    FeatureWidget(
+                                      iconString:
+                                          'assets/images/Frame35@4x.png',
+                                      subTitle:
+                                          'Use LineLeap for exclusive deals on your favorite drinks!',
+                                      tile: 'Exclusive Deals',
+                                    ),
+                                    FeatureWidget(
+                                      iconString:
+                                          'assets/images/Reservations@4x.png',
+                                      subTitle:
+                                          'Save your spot in line or grab the perfect table in seconds.',
+                                      tile: 'Reservations',
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
@@ -403,6 +412,72 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   )
+                ],
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.only(
+                // left: mediaSize.width * .28,
+                // right: mediaSize.width * .28,
+                top: mediaSize.height * .1,
+                bottom: mediaSize.height * .08),
+            sliver: SliverToBoxAdapter(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SocialGroupsWidget(),
+                  FooterItemWidgets(
+                    models: makeCompanyItem(),
+                  ),
+                  FooterItemWidgets(
+                    models: makeCustomersItem(),
+                  ),
+                  FooterItemWidgets(
+                    models: makeVenueOwnersItem(),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              width: double.infinity,
+              height: 50,
+              color: Color(0xff1E2E42),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: mediaSize.height * .19),
+                      child: CustomText(
+                        '© LineLeap 2020',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        textColor: Color(0xff828a91),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Expanded(
+                    child: CustomText(
+                      'Privacy Policy',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      textColor: Color(0xff828a91),
+                    ),
+                  ),
+                  Expanded(
+                    child: CustomText(
+                      'Terms & Conditions',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      textColor: Color(0xff828a91),
+                    ),
+                  ),
                 ],
               ),
             ),

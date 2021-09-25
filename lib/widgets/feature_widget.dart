@@ -16,9 +16,10 @@ class FeatureWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size mediaSize = MediaQuery.of(context).size;
     return Container(
-      // width: mediaSize.width * .05,
-      // height: mediaSize.height * .04,
-      padding: const EdgeInsets.only(right: 10),
+      // color: Colors.green,
+      width: mediaSize.width * .2,
+      height: mediaSize.height * .09,
+      padding: const EdgeInsets.only(right: 10, top: 10, bottom: 10),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
