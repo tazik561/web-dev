@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:web_dev_sample/data/footer_item_model.dart';
 import 'package:web_dev_sample/widgets/custom_text.dart';
 
@@ -9,7 +10,7 @@ class FooterItemWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
+      width: 200.w,
       height: 300,
       child: Column(
         children: [
@@ -18,6 +19,7 @@ class FooterItemWidgets extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 24,
             textColor: Colors.white,
+            maxLines: 1,
           ),
           SizedBox(
             height: 20,
@@ -25,11 +27,18 @@ class FooterItemWidgets extends StatelessWidget {
           ...models.subtitles.map((e) {
             return Padding(
               padding: const EdgeInsets.only(top: 20),
-              child: CustomText(
-                e,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-                textColor: Color(0xff828a91),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: CustomText(
+                      e,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      textColor: Color(0xff828a91),
+                      maxLines: 1,
+                    ),
+                  ),
+                ],
               ),
             );
           }),

@@ -28,7 +28,6 @@ class MainGridWidget extends StatelessWidget {
             flex: 2,
             child: Container(
               alignment: Alignment.topCenter,
-              color: Colors.red,
               child: Image.asset(
                 model.imgHeder,
                 height: double.infinity,
@@ -45,6 +44,7 @@ class MainGridWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontSize: 24,
               textColor: Colors.white,
+              maxLines: 1,
             ),
           ),
           Padding(

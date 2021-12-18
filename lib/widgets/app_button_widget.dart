@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:web_dev_sample/widgets/custom_text.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButtonWidget extends StatelessWidget {
   final String buttonTitle;
@@ -25,12 +26,12 @@ class AppButtonWidget extends StatelessWidget {
       height: height ?? mediaSize.height * .04,
       child: ElevatedButton(
         onPressed: () {},
-        child: Text(buttonTitle),
+        child: FittedBox(fit: BoxFit.fitWidth, child: Text(buttonTitle)),
         style: ElevatedButton.styleFrom(
             primary: buttonColor ?? Color(0xff3980F7),
-            padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5),
             textStyle: TextStyle(
-                fontSize: fontSize ?? 18,
+                fontSize: fontSize != null ? fontSize! : 18.sp,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Lato'),
             shape: RoundedRectangleBorder(
